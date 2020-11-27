@@ -13,6 +13,9 @@ public class AddressBook {
 			System.out.println("Press 3 : Print Contact");
 			System.out.println("Press 4 : Delete Contact");
 			System.out.println("Press 5 : Sort Contact By Name");
+			System.out.println("Press 6 : Sort Contact By City");
+			System.out.println("Press 7 : Sort Contact By State");
+			System.out.println("Press 8 : Sort Contact By Zip");
 			System.out.println("Press 0 : Exit");
 			Scanner scanner = new Scanner(System.in);
 			int choice = scanner.nextInt();
@@ -32,10 +35,19 @@ public class AddressBook {
 			case 5:
 				addressMethod.sortByName();
 				break;
+			case 6:
+				addressMethod.sortByCity();
+				break;
+			case 7:
+				addressMethod.sortByState();
+				break;
+			case 8:
+				addressMethod.sortByZip();
+				break;
 			case 0:
 				return;
 			default:
-				System.out.println("Please Enter Correct Option");
+				System.out.println("Please Enter Valid Option");
 			}
 		}
 	}
@@ -46,7 +58,7 @@ public class AddressBook {
 		String name = null;
 		while (true) {
 
-			System.out.println("Enter the Address book name");
+			System.out.println("Enter the Address Book Name");
 			Scanner scanner = new Scanner(System.in);
 			name = scanner.nextLine();
 			AddressMethods addressMethods = addressbookMap.get(name);
@@ -74,7 +86,7 @@ public class AddressBook {
 			int choice = scanner.nextInt();
 			switch (choice) {
 			case 1:
-				System.out.println("Enter city for search");
+				System.out.println("Enter city for Search");
 				String city = scanner.next();
 				System.out.println("Enter first name");
 				String firstName = scanner.next();
@@ -83,7 +95,7 @@ public class AddressBook {
 				SearchPersonINCity(addressbookMap, city, firstName, lastName);
 				break;
 			case 2:
-				System.out.println("Enter state for search");
+				System.out.println("Enter state for Search");
 				String state = scanner.next();
 				System.out.println("Enter first name");
 				String FirstName = scanner.next();
@@ -92,29 +104,29 @@ public class AddressBook {
 				SearchPersonInState(addressbookMap, state, FirstName, LastName);
 				break;
 			case 3:
-				System.out.println("Enter city for search");
+				System.out.println("Enter city for Search");
 				String City = scanner.next();
 				SearchINCity(addressbookMap, City);
 				break;
 			case 4:
-				System.out.println("Enter state for search");
+				System.out.println("Enter state for Search");
 				String State = scanner.next();
 				SearchINState(addressbookMap, State);
 				break;
 			case 5:
-				System.out.println("Enter city for search");
+				System.out.println("Enter city for Search");
 				String cityCount = scanner.next();
 				CountCity(addressbookMap, cityCount);
 				break;
 			case 6:
-				System.out.println("Enter State for search");
+				System.out.println("Enter State for Search");
 				String stateCount = scanner.next();
 				CountState(addressbookMap, stateCount);
 				break;
 			case 0:
 				return;
 			default:
-				System.out.println("Please Enter Correct choise ");
+				System.out.println("Please Enter Valid choise ");
 			}
 		}
 	}
